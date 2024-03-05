@@ -1,0 +1,5 @@
+# Shaprner Project
+
+This is a basic .txt file.
+
+Sharpner is a platform where students or job seeker can learn DSA and development and get hired by companies.
