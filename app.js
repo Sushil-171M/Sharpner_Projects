@@ -83,4 +83,37 @@ for(let i=0;i<fruits2.length;i++){
   }
  }
 
+// --------appendchild----createelement---------
+
+// Deliverables:
+
+// 1. Inside the first Div, after the main heading add a sub-heading (h3 tag) "Buy high quality organic fruits online".
+
+// 2. Make the sub-heading text italic.
+
+// 2. Inside the second Div, before the unordered list add a paragraph tag showing "Total fruits: 4".
+
+// 3. On this paragraph tag set an id of "fruits-total".
+
+
+var divElement = document.querySelector('#main-heading')
+
+var para = document.createElement('h3');
+var text = document.createTextNode('Buy high quality organic fruits online');
+
+para.appendChild(text)
+para.style.fontStyle = 'italic'
+
+divElement.appendChild(para)
+
+var div = document.getElementsByTagName('div')
+var fruits = document.querySelector('.fruits')
+var  para2 = document.createElement('p')
+var text2 = document.createTextNode('Total fruits: 4')
+
+para2.appendChild(text2)
+
+div[1].insertBefore(para2,fruits)
+
+para2.id = 'fruits-total'
 
