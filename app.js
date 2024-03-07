@@ -117,3 +117,46 @@ div[1].insertBefore(para2,fruits)
 
 para2.id = 'fruits-total'
 
+----------------------10-Question-------------------------
+
+// Add the Edit Button:
+// Implement the code as in video but with one extra 'Edit' button in 'li'
+// Add the Edit Button:
+// Implement the code as in video but with one extra 'Edit' button in 'li'
+
+//1. In each "li" after the delete button add an edit button with class 'edit-btn'. Once you do this the output on the screen will look like this:
+ // 2. Now, implement the add and delete functionality just the way it is done in the video. There is only one difference that now the new 'li' element that you will create will have two buttons (delete and edit) instead of one button.
+ 
+var fruitList = document.querySelectorAll('.fruit')
+
+fruitList.forEach((fruitLi)=>{
+  //-----Create Edit button and addding to the documnet
+    const editbtn = document.createElement('button');
+    const editbtntext = document.createTextNode('Edit');
+    editbtn.appendChild(editbtntext);
+    editbtn.className = 'edit-btn'
+  //--------fetch fruits list and edit button to all
+  fruitLi.appendChild(editbtn)
+});
+
+//------------------add button-----------------------------
+const form = document.querySelector('form');
+const fruits = document.querySelector('.fruits');
+
+form.addEventListener('submit',function(event){
+  event.preventDefault();
+ const fruitToAdd = document.getElementById('fruit-to-add');
+ let newLi = document.createElement('li');
+  newLi.innerHTML = fruitToAdd.value + '<button class="delete-btn">x</button>' ;
+  fruits.appendChild(newLi);
+});
+
+//-----------------Delete Function---------------
+fruits.addEventListener('click',function(event){
+
+  if(event.target.classList.contains('delete-btn')){
+    const fruitDelete = event.target.parentElement;
+    fruits.removeChild(fruitDelete);
+  }
+});
+
